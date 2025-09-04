@@ -1,59 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
-    <title>Responsive landing page coffe 3D</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --first-color: #FCA4A6;
+      --first-color-dark: #C1576A;
+      --first-color-darken: #A83E51;
+      --white-color: #FCF8F8;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--first-color);
+      color: var(--white-color);
+    }
+
+    .section {
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--white-color);
+    }
+
+    /* Coffee Cards */
+    .coffees__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+
+    .coffee__card {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .coffee__card:hover {
+      transform: translateY(-10px) scale(1.03);
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .coffee__card img {
+      width: 120px;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Special Section */
+    .special__container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      align-items: center;
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+    .special__img img {
+      width: 250px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--first-color-darken);
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    .footer__container {
+      display: grid;
+      gap: 1.2rem;
+    }
+    .footer__title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .footer__social {
+      margin: 0 0.3rem;
+      color: #fff;
+      font-size: 1.3rem;
+    }
+    .footer__copy {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+  </style>
+  <title>Responsive landing page coffe 3D</title>
 </head>
 <body>
+  <!--===== HEADER =====-->
         <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <a href="#" class="nav__logo">Coffee</a>
-            </div>
-
-            <div class="nav__toggle" id="nav-toggle">
-                <i class="bx bx-menu"></i>
-            </div>
-
-            <div class="nav__menu" id="nav-menu">
-                <div class="nav__close" id="nav-close">
-                    <i class="bx bx-x"></i>
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Coffee</a>
+                </div>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
                 </div>
 
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-                    <li class="nav__item"><a href="about us.html" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Blog</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
 
-    <main class="l-main">
-        <section class="home" id="home">
-            <div class="home__container bd-grid">
-                <div class="home__img">
-                    <img src="img1.png" alt="" data-speed="-2" class="move">
-                    <img src="img2.png" alt="" data-speed="2" class="move">
-                    <img src="img3.png" alt="" data-speed="2" class="move">
-                    <img src="img4.png" alt="" data-speed="-2" class="move">
-                    <img src="img5.png" alt="" data-speed="-2" class="move">
-                    <img src="img6.png" alt="" data-speed="2" class="move">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="about us.html" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Blog</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
                 </div>
+            </nav>
+        </header>
 
-                <div class="home__data">
-                    <h1 class="home__title">Coffee <br> Drink 3D</h1>
-                    <p class="home__description">Let's help discover the best coffee drink <br>of the week.</p>
-                    <a href="#" class="home__button">Get Started</a>
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+                <div class="home__container bd-grid">
+                    <div class="home__img">
+                        <img src="img1.png" alt="" data-speed="-2" class="move">
+                        <img src="img2.png" alt="" data-speed="2" class="move">
+                        <img src="img3.png" alt="" data-speed="2" class="move">
+                        <img src="img4.png" alt="" data-speed="-2" class="move">
+                        <img src="img5.png" alt="" data-speed="-2" class="move">
+                        <img src="img6.png" alt="" data-speed="2" class="move">
+                    </div>
+
+                    <div class="home__data">
+                        <h1 class="home__title">Coffee<br> Drink 3D</h1>
+                        <p class="home__description">Let's help discover the best coffee drink <br> of the week.</p>
+                        <a href="#" class="home__button">Get Started</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <script src="main.js"></script>
+            </section>
+        </main>
+
+
+    <!-- OUR COFFEES -->
+    <section class="coffees section" id="coffees">
+      <h2 class="section-title">Our Coffees</h2>
+      <div class="coffees__container bd-grid">
+        <div class="coffee__card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG" alt="Espresso">
+          <h3>Espresso</h3>
+          <p>Strong & bold taste</p>
+        </div>
+        <div class="coffee__card">
+          <img src="https://coffeebrandcoffee.com/cdn/shop/articles/How_to_Make_the_Latte_Recipe_A_Smooth_and_Creamy_Delight_1600x.png?v=1745597261" alt="Latte">
+          <h3>Latte</h3>
+          <p>Creamy & smooth</p>
+        </div>
+        <div class="coffee__card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Cappuccino_at_Sightglass_Coffee.jpg" alt="Cappuccino">
+          <h3>Cappuccino</h3>
+          <p>Perfect foam top</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL -->
+    <section class="special section" id="special">
+      <div class="special__container bd-grid">
+        <div class="special__img"><img src="img4.png" alt=""></div>
+        <div class="special__data">
+          <h2 class="section-title">Special Combo</h2>
+          <p>Get a coffee with a sweet snack at a discounted price! Perfect treat for your day.</p>
+          <a href="#" class="home__button">Order Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer section" id="contact">
+    <div class="footer__container bd-grid">
+      <div class="footer__content">
+        <h3 class="footer__title">Coffee 3D</h3>
+        <p>Your daily dose of freshness in every sip.</p>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">Follow Us</h3>
+        <a href="#" class="footer__social"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="footer__social"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="footer__social"><i class="bx bxl-twitter"></i></a>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">Contact</h3>
+        <p>Email: info@coffee3d.com</p>
+        <p>Phone: +91 9876543210</p>
+      </div>
+    </div>
+    <p class="footer__copy">&#169; 2025 Coffee 3D. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero
+    gsap.from(".home__title",{y:40, opacity:0, duration:1, delay:0.3, ease:"power3.out"});
+    gsap.from(".home__description",{y:40, opacity:0, duration:1, delay:0.6, ease:"power3.out"});
+    gsap.from(".home__button",{y:40, opacity:0, duration:1, delay:0.9, ease:"power3.out"});
+    gsap.from(".home__img img",{
+  y:60,
+  opacity:0,
+  duration:1.5,
+  delay:0.5,
+  stagger:0.2,
+  ease:"power3.out"
+});
+
+
+    // Our Coffees
+    gsap.from(".coffee__card",{
+      scrollTrigger:{ trigger:".coffees__container", start:"top 80%" },
+      y:40, opacity:0, duration:1, stagger:0.3, ease:"power3.out"
+    });
+
+    // Special
+    gsap.from(".special__img",{ scrollTrigger:{ trigger:".special__container", start:"top 80%" }, x:-50, opacity:0, duration:1, ease:"power3.out"});
+    gsap.from(".special__data",{ scrollTrigger:{ trigger:".special__container", start:"top 80%" }, x:50, opacity:0, duration:1, delay:0.3, ease:"power3.out"});
+
+    // Footer
+    gsap.from(".footer__container",{ scrollTrigger:{ trigger:".footer", start:"top 90%" }, y:30, opacity:0, duration:1, ease:"power3.out"});
+  </script>
 </body>
 </html>
